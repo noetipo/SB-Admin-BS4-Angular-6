@@ -1,0 +1,29 @@
+<div class="card mb-3">
+    <div class="card-header"><h5>Consulta Seguro</h5></div>
+    <form [formGroup]="consultaForm">
+        <div class="input-group mb-3">
+            <input type="text"
+                   class="form-control"
+                   formControlName="dni" id="dni" placeholder="Consultar Por Dni">
+            <div class="input-group-append">
+                <button class="input-group-text" id="basic-addon2" (click)=" consultaSeguro()">Consultar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="card" *ngIf="data">
+    <div class="card-body">
+        <h4>Paciente: {{data.paciente.nombre}} {{data.paciente.apellido_paterno}}
+            {{data.paciente.apellido_materno}}</h4>
+        <h4>Correo: {{data.paciente.correo}}</h4>
+        <h4>Dni: {{data.paciente.dni}}</h4>
+        <h4> Telefono: {{data.paciente.telefono}}</h4>
+        <h2 class="card-text">Cuenta Con seguro</h2>
+    </div>
+</div>
+
+<div *ngIf="message">
+    <h3>Mensage: {{message}}</h3>
+</div>
